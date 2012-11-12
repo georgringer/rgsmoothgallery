@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'rgsmoothgallery'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.tx_rgsmoothgallery">SmoothGallery Configuration</label>
+			<label index="tt_content.tx_rgsmoothgallery_rgsg">Activate SmoothGallery</label>
+
+			<label index="tt_content.tx_rgsmoothgallery_option_directionNav">Prev/Next navigation</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_controlNav">General navigation</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_theme">Theme</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_theme.default">Default</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_theme.dark">Dark</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_theme.light">Light</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_theme.bar">Bar</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect">Effect</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tt_content.tx_rgsmoothgallery_rgsg">SmoothGallery aktivieren</label>
+		</languageKey>
+		<languageKey index="nl" type="array">
+			<label index="tt_content.tx_rgsmoothgallery_rgsg">SmoothGallery aktiveren</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="tt_content.tx_rgsmoothgallery_rgsg">Activer SmoothGallery</label>
+		</languageKey>
+
+	</data>
+</T3locallang>
