@@ -1,0 +1,7 @@
+page.includeJSFooterlibs.rgsmoothgallery = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/jquery.nivo.slider.js
+
+page.includeCSS.rgsmoothgalleryThemeDefault = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/themes/default/default.css
+page.includeCSS.rgsmoothgalleryThemeLight = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/themes/light/light.css
+page.includeCSS.rgsmoothgalleryThemeDark = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/themes/dark/dark.css
+page.includeCSS.rgsmoothgallery = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/nivo-slider.css
+

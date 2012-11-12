@@ -7,7 +7,7 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 	 * @param $conf
 	 * @return string
 	 */
-	public function user_fo ($content, $conf) {
+	public function user_renderConfiguration ($content, $conf) {
 		$contentElementData = $this->cObj->data;
 
 		if ($contentElementData['tx_rgsmoothgallery_rgsg'] === '') {
@@ -26,7 +26,6 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 				});
 		</script>';
 
-//		print_r($js);die();
 		return $js;
 	}
 

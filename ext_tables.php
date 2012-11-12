@@ -3,7 +3,16 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+/***************
+ * Default TypoScript
+ */
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Rendering', 'rgsmoothgallery Rendering');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Inclusion', 'rgsmoothgallery Inclusion');
 
+
+/***************
+ * Add fields to TCA
+ */
 t3lib_div::loadTCA ('tt_content');
 $tempColumns = Array(
 	'tx_rgsmoothgallery_rgsg' => array(
@@ -21,7 +30,6 @@ $tempColumns = Array(
 	),
 	'tx_rgsmoothgallery_option_directionNav' => array(
 		'exclude' => 1,
-		'label' => 'LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_directionNav',
 		'config' => array(
 			'type' => 'check',
 		)
