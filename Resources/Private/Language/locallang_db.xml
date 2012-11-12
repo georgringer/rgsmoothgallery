@@ -17,6 +17,20 @@
 			<label index="tt_content.tx_rgsmoothgallery_option_theme.light">Light</label>
 			<label index="tt_content.tx_rgsmoothgallery_option_theme.bar">Bar</label>
 			<label index="tt_content.tx_rgsmoothgallery_option_effect">Effect</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.fold">fold</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.fade">fade</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.sliceDownRight">slide down right</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.sliceDownLeft">slide down left</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.sliceUpRight">slide up right</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.sliceUpLeft">slide up left</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.sliceUpDown">slide up down</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.sliceUpDownLeft">slide up down left</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.boxRandom">box random</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.boxRain">box rain</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.boxRainReverse">box rain reverse</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.boxRainGrow">box rain grow</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.boxRainGrowReverse">box rain grow reverese</label>
+			<label index="tt_content.tx_rgsmoothgallery_option_effect.random">random effect</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tt_content.tx_rgsmoothgallery_rgsg">SmoothGallery aktivieren</label>

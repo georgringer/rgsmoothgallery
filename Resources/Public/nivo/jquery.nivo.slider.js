@@ -285,7 +285,6 @@
             }, settings.animSpeed);
         };
 
-		console.log(settings);
         // Private run method
         var nivoRun = function(slider, kids, settings, nudge){
             // Get our vars
@@ -353,7 +352,6 @@
                 if(currentEffect === undefined) { currentEffect = 'fade'; }
 				currentEffect = 'fade';
 			}
-			console.log(currentEffect );
 
             // Run random effect from specified set (eg: effect:'fold,fade')
             if(settings.effect.indexOf(',') !== -1){

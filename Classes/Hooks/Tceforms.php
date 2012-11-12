@@ -23,23 +23,47 @@
  */
 class Tx_Rgsmoothgallery_Hooks_Tceforms {
 
-	public function getSingleField_preProcess ($table, $field, &$row, $altName, $palette, $extra, $pal, $parentObject) {
+	/**
+	 * @param $table
+	 * @param $field
+	 * @param $row
+	 * @param $altName
+	 * @param $palette
+	 * @param $extra
+	 * @param $pal
+	 * @param $parentObject
+	 */
+	public function getSingleField_preProcess($table, $field, &$row, $altName, $palette, $extra, $pal, $parentObject) {
 		if ($table == 'tt_content') {
-			$values = get_object_vars (json_decode ($row['tx_rgsmoothgallery_configuration']));
-			if (is_array ($values)) {
-				foreach ($values as $key => $value) {
-					if (t3lib_div::isFirstPartOfStr ($key, 'tx_rgsmoothgallery_option')) {
-						$row[$key] = $value;
+			$rawConfiguration = $row['tx_rgsmoothgallery_configuration'];
+			if (!empty($rawConfiguration)) {
+				$decoded = json_decode ($rawConfiguration);
+				if (!empty($decoded)) {
+					$values = get_object_vars ($decoded);
+					if (is_array ($values)) {
+						foreach ($values as $key => $value) {
+							if (t3lib_div::isFirstPartOfStr ($key, 'tx_rgsmoothgallery_option')) {
+								$row[$key] = $value;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 
-	public function getSingleField_postProcess ($table, $field, $row, &$out, $PA, $parentObject) {
+	/**
+	 * @param string $table table name
+	 * @param string $field field name
+	 * @param array $row record
+	 * @param string $out content rendered
+	 * @param array $PA current configuration
+	 * @param $parentObject
+	 */
+	public function getSingleField_postProcess($table, $field, $row, &$out, $PA, $parentObject) {
 		if ($table == 'tt_content' && $row['tx_rgsmoothgallery_rgsg'] != 1) {
 			if (t3lib_div::isFirstPartOfStr ($field, 'tx_rgsmoothgallery_option')) {
-				$out = 'aaaa';
+				$out = '';
 			}
 		}
 	}

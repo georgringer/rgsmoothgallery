@@ -6,8 +6,8 @@ if (!defined ('TYPO3_MODE')) {
 /***************
  * Default TypoScript
  */
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Rendering', 'rgsmoothgallery Rendering');
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Inclusion', 'rgsmoothgallery Inclusion');
+t3lib_extMgm::addStaticFile ($_EXTKEY, 'Configuration/TypoScript/Rendering', 'rgsmoothgallery Rendering');
+t3lib_extMgm::addStaticFile ($_EXTKEY, 'Configuration/TypoScript/Inclusion', 'rgsmoothgallery Inclusion');
 
 
 /***************
@@ -30,6 +30,7 @@ $tempColumns = Array(
 	),
 	'tx_rgsmoothgallery_option_directionNav' => array(
 		'exclude' => 1,
+		'label' => 'LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_directionNav',
 		'config' => array(
 			'type' => 'check',
 		)
@@ -47,7 +48,7 @@ $tempColumns = Array(
 		'config' => array(
 			'type' => 'select',
 			'items' => array(
-				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.default' , 'default'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.default', 'default'),
 				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.dark', 'dark'),
 				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.light', 'light'),
 				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.bar', 'bar'),
@@ -60,20 +61,20 @@ $tempColumns = Array(
 		'config' => array(
 			'type' => 'select',
 			'items' => array(
-				array('fold', 'fold'),
-				array('fade', 'fade'),
-				array('sliceDownRight', 'sliceDownRight'),
-				array('sliceDownLeft', 'sliceDownLeft'),
-				array('sliceUpRight', 'sliceUpRight'),
-				array('sliceUpLeft', 'sliceUpLeft'),
-				array('sliceUpDown', 'sliceUpDown'),
-				array('sliceUpDownLeft', 'sliceUpDownLeft'),
-				array('boxRandom', 'boxRandom'),
-				array('boxRain', 'boxRain'),
-				array('boxRainReverse', 'boxRainReverse'),
-				array('boxRainGrow', 'boxRainGrow'),
-				array('boxRainGrowReverse', 'boxRainGrowReverse'),
-				array('random', 'random'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.fold', 'fold'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.fade', 'fade'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.sliceDownRight', 'sliceDownRight'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.sliceDownLeft', 'sliceDownLeft'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.sliceUpRight', 'sliceUpRight'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.sliceUpLeft', 'sliceUpLeft'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.sliceUpDown', 'sliceUpDown'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.sliceUpDownLeft', 'sliceUpDownLeft'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.boxRandom', 'boxRandom'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.boxRain', 'boxRain'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.boxRainReverse', 'boxRainReverse'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.boxRainGrow', 'boxRainGrow'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.boxRainGrowReverse', 'boxRainGrowReverse'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect.random', 'random'),
 			),
 		)
 	),

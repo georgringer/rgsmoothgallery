@@ -7,7 +7,7 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 	 * @param $conf
 	 * @return string
 	 */
-	public function user_renderConfiguration ($content, $conf) {
+	public function user_renderConfiguration($content, $conf) {
 		$contentElementData = $this->cObj->data;
 
 		if ($contentElementData['tx_rgsmoothgallery_rgsg'] === '') {
@@ -19,14 +19,22 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 					$(".rgsmoothgallery-' . $contentElementData['uid'] . ' .caption").remove();
 					$(".rgsmoothgallery-' . $contentElementData['uid'] . '").nivoSlider(
 						{
-							effect:"fade",
-							animSpeed: 400
+							' . $this->getRenderedOptions ($contentElementData['tx_rgsmoothgallery_configuration']) . '
 						}
 					);
 				});
 		</script>';
 
 		return $js;
+	}
+
+	protected function getRenderedOptions($configuration) {
+		$renderedOptions = array();
+
+//		$renderedOptions[] = 'effect:"boxRain"';
+
+
+		return implode (',' . LF, $renderedOptions);
 	}
 
 }
