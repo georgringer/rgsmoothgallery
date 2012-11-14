@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'rgsmoothgallery',
-	'description' => 'bla fo',
+	'description' => 'rgsmoothgallery based on jQuery',
 	'category' => 'fe',
 	'author' => 'Georg Ringer',
 	'author_email' => 'typo3@ringerge.org',
@@ -28,10 +28,10 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => '',
-	'version' => '1.4.0',
+	'version' => '3.0.0',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '6.0.0',
+			'typo3' => '4.7.0',
 			'extbase' => '',
 			'fluid' => '',
 		),
