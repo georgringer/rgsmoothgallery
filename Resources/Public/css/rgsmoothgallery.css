@@ -4,17 +4,7 @@
 	display: none;
 }
 
-/*
-	Each slide
-	Important:
-	Set the width of your slides
-	If height not specified height will be set by the slide content
-	Set to display block
-*/
-
 .rgsmoothgallery .slides_container div.slide {
-	/*width: 570px;*/
-	/*height: 270px;*/
 	display: block;
 }
 
@@ -55,7 +45,7 @@
 	width: 12px;
 	height: 0;
 	padding-top: 12px;
-	background-image: url(../img/pagination.png);
+	background-image: url(../img_/pagination.png);
 	background-position: 0 0;
 	float: left;
 	overflow: hidden;
