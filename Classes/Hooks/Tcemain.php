@@ -1,7 +1,7 @@
 <?php
 /***************************************************************
  *  Copyright notice
- *  (c) 2011 Georg Ringer <typo3@ringerge.org>
+ *  (c) 2012 Georg Ringer <typo3@ringerge.org>
  *  All rights reserved
  *  This script is part of the TYPO3 project. The TYPO3 project is
  *  free software; you can redistribute it and/or modify
@@ -19,7 +19,6 @@
 
 /**
  * Hook into tcemain
-
  */
 class Tx_Rgsmoothgallery_Hooks_Tcemain {
 

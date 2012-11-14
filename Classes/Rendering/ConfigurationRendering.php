@@ -28,13 +28,16 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 		return $js;
 	}
 
+	/**
+	 * Get the configuration
+	 *
+	 * @param string $configuration
+	 * @return string
+	 */
 	protected function getRenderedOptions($configuration) {
-		$renderedOptions = array();
-
-//		$renderedOptions[] = 'effect:"boxRain"';
-
-
-		return implode (',' . LF, $renderedOptions);
+		/** @var $renderer Tx_Rgsmoothgallery_Model_Dto_Configuration */
+		$renderer = t3lib_div::makeInstance ('Tx_Rgsmoothgallery_Model_Dto_Configuration', $configuration);
+		return $renderer->render ();
 	}
 
 }

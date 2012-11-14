@@ -31,6 +31,8 @@
 			<label index="tt_content.tx_rgsmoothgallery_option_effect.boxRainGrow">box rain grow</label>
 			<label index="tt_content.tx_rgsmoothgallery_option_effect.boxRainGrowReverse">box rain grow reverese</label>
 			<label index="tt_content.tx_rgsmoothgallery_option_effect.random">random effect</label>
+			<label index="general.true">true</label>
+			<label index="general.false">false</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tt_content.tx_rgsmoothgallery_rgsg">SmoothGallery aktivieren</label>

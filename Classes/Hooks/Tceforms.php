@@ -19,7 +19,6 @@
 
 /**
  * Hook into tceforms
-
  */
 class Tx_Rgsmoothgallery_Hooks_Tceforms {
 

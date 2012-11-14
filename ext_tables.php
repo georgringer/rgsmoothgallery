@@ -32,14 +32,22 @@ $tempColumns = Array(
 		'exclude' => 1,
 		'label' => 'LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_directionNav',
 		'config' => array(
-			'type' => 'check',
+			'type' => 'select',
+			'items' => array(
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:general.true', 'true'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:general.false', 'false')
+			),
 		)
 	),
 	'tx_rgsmoothgallery_option_controlNav' => array(
 		'exclude' => 1,
 		'label' => 'LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_controlNav',
 		'config' => array(
-			'type' => 'check',
+			'type' => 'select',
+			'items' => array(
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:general.true', 'true'),
+				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:general.false', 'false')
+			),
 		)
 	),
 	'tx_rgsmoothgallery_option_theme' => array(
