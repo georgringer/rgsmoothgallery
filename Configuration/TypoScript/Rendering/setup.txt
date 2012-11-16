@@ -8,8 +8,8 @@ tt_content.image.20 {
 		cObject {
 			10 = TEXT
 			10.value (
-				<div class="csc-textpic-imagewrap theme-default rgsmoothgallery" style="width:{register:totalwidth}px;">
-				<div class="rgsmoothgallery-general rgsmoothgallery-{field:uid}" style="width:{register:totalwidth}px;height:{register:imageheight}px;"> |</div>
+				<div class="csc-textpic-imagewrap theme-default rgsmoothgallery" style="height:{register:imageheight}px;width:{register:totalwidth}px;">
+				<div id="rgsmoothgallery-{field:uid}" class="rgsmoothgallery-general" style="width:{register:totalwidth}px;height:{register:imageheight}px;"> |</div>
 			)
 
 			20 = TEXT
