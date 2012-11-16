@@ -17,7 +17,6 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 		$js = '<script type="text/javascript">
 				$(window).load(function() {
 					$("#rgsmoothgallery-' . $contentElementData['uid'] . '").parent().css("height", "");
-					$("#rgsmoothgallery-' . $contentElementData['uid'] . ' .caption").remove();
 					$("#rgsmoothgallery-' . $contentElementData['uid'] . '").nivoSlider(
 						{
 							' . $this->getRenderedOptions ($contentElementData['tx_rgsmoothgallery_configuration']) . '

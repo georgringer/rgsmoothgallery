@@ -30,6 +30,9 @@ tt_content.image.20 {
 	1.titleText.field.override = imagecaption
 	1.titleText.field.overrideif.isTrue.field = tx_rgsmoothgallery_rgsg
 
+	# Don't render the caption if not needed
+	caption.stdWrap.if.isFalse.field = tx_rgsmoothgallery_rgsg
+
 	# Render just the image
 	rendering.rgsmoothgallery {
 		allStdWrap {
