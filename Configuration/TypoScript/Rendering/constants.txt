@@ -1,0 +1,4 @@
+rgsmoothgallery {
+	# cat=rgsmoothgallery/content; type=string; label= Theme: Available are: default,light,dark,bar
+	theme = light
+}
