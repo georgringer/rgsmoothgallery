@@ -2,6 +2,7 @@
 includeLibs.rgsmoothgallery = typo3conf/ext/rgsmoothgallery/Classes/Rendering/ConfigurationRendering.php
 
 tt_content.image.20 {
+	# Set some classes around
 	imageStdWrap.dataWrap.override {
 		if.isTrue.field = tx_rgsmoothgallery_rgsg
 		cObject = COA
@@ -11,18 +12,25 @@ tt_content.image.20 {
 				<div class="csc-textpic-imagewrap theme-default rgsmoothgallery" style="height:{register:imageheight}px;width:{register:totalwidth}px;">
 				<div id="rgsmoothgallery-{field:uid}" class="rgsmoothgallery-general" style="width:{register:totalwidth}px;height:{register:imageheight}px;"> |</div>
 			)
-
 			20 = TEXT
 			20.value = </div>
 		}
-
 	}
+
+	# Add the JS configuration
 	imageStdWrap.stdWrap.append = USER
 	imageStdWrap.stdWrap.append {
 		stdWrap.if.isTrue.field = tx_rgsmoothgallery_rgsg
 		userFunc = Tx_Rgsmoothgallery_Rendering_ConfigurationRendering->user_renderConfiguration
 	}
 
+	# Override the title field and use the caption
+	1.altText.field.override = imagecaption
+	1.altText.field.override.if.isTrue.field = tx_rgsmoothgallery_rgsg
+	1.titleText.field.override = imagecaption
+	1.titleText.field.overrideif.isTrue.field = tx_rgsmoothgallery_rgsg
+
+	# Render just the image
 	rendering.rgsmoothgallery {
 		allStdWrap {
 			wrap = <div class="csc-textpic-imagewrap">|</div>
