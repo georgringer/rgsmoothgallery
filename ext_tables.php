@@ -50,19 +50,6 @@ $tempColumns = Array(
 			),
 		)
 	),
-	'tx_rgsmoothgallery_option_theme' => array(
-		'exclude' => 1,
-		'label' => 'LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme',
-		'config' => array(
-			'type' => 'select',
-			'items' => array(
-				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.default', 'default'),
-				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.dark', 'dark'),
-				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.light', 'light'),
-				array('LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_theme.bar', 'bar'),
-			),
-		)
-	),
 	'tx_rgsmoothgallery_option_effect' => array(
 		'exclude' => 1,
 		'label' => 'LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery_option_effect',
@@ -93,7 +80,7 @@ t3lib_extMgm::addTCAcolumns ('tt_content', $tempColumns, 1);
 
 $GLOBALS['TCA']['tt_content']['palettes']['rgsg'] = array(
 	'showitem' => 'tx_rgsmoothgallery_rgsg,tx_rgsmoothgallery_configuration,' .
-		'--linebreak--,tx_rgsmoothgallery_option_theme,tx_rgsmoothgallery_option_effect,' .
+		'--linebreak--,tx_rgsmoothgallery_option_effect,' .
 		'--linebreak--,tx_rgsmoothgallery_option_directionNav,tx_rgsmoothgallery_option_controlNav,',
 	'canNotCollapse' => FALSE
 );

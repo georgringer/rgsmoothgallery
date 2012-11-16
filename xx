@@ -1,0 +1,45 @@
+Hallo,
+
+folgende Lücken wurden behoben/auskommentiert:
+sqlinjection in dmail_confirm.php
+schadcode in index.php
+
+EXT dhip_event
+=========================
+in dhip_event befindet sich wohl das einfallstor der sqlinjection. ich kann files leider nicht direkt ändern, daher in
+pi1/class.tx_dhipevent_pi1.php
+
+in zeilen 239,240,282,283 die Werte mit intval() absichern
+
+
+
+EXT dhip_pjnw
+=========================
+class.tx_dhippjnw_ajax_organigramm.php => voll von sql injections, jeweils mit (int) oder $GLOBALS['TYPO3_DB']->quoteStr escapen
+
+bsp #282
+				$resOrg = $GLOBALS["TYPO3_DB"]->exec_SELECTquery($select_fields="*",$from_table="tx_dhippjnw_dienststelle",$where_clause="uid = ".t3lib_div::_GP('uid'), $groupBy='',$orderBy='',$limit='1');
+
+/res/tcpdf => hier gibt es wohl eine gröbere schnittstelle und man kann wohl komplette befehle ausführen am server, zumindest würds mich nicht wundern, siehe zB /res/tcpdf/examples/index.php
+
+class.tx_dhippjnw_autocomplete.php => sqli
+
+mod1/ => backend modul, auch sqli, aber nicht genauer gecheckt, BE zugang notwendig
+
+EXT user_flexfilelin
+========================
+pi3/class.user_flexfilelink_pi3.php => XSS > #60 => intval auf die $langID & $pageID
+pi4/class.user_flexfilelink_pi4.php => XSS => intval auf $langUid
+pi5/class.user_flexfilelink_pi5.php => XSS => intval auf $langUid
+pi6/class.user_flexfilelink_pi6.php => XSS => intval auf $langUid
+
+EXT /user_newbooks
+=========================
+pi1/class.user_newbooks_pi1.php => Schadecode in zeile 2
+pi1/class.user_newbooks_pi1.php => SQL i => (intval) $this->langUid
+
+EXT /user_newslib
+======================
+pi1/class.user_newslib_pi1.php => sqli//XSS => intval auf $this->langUid // $this->fontSize
+pi5/class.user_newslib_pi5.php => sqli => intval auf $this->langUid // $this->FSize
+

@@ -11,11 +11,6 @@
 
 			<label index="tt_content.tx_rgsmoothgallery_option_directionNav">Prev/Next navigation</label>
 			<label index="tt_content.tx_rgsmoothgallery_option_controlNav">General navigation</label>
-			<label index="tt_content.tx_rgsmoothgallery_option_theme">Theme</label>
-			<label index="tt_content.tx_rgsmoothgallery_option_theme.default">Default</label>
-			<label index="tt_content.tx_rgsmoothgallery_option_theme.dark">Dark</label>
-			<label index="tt_content.tx_rgsmoothgallery_option_theme.light">Light</label>
-			<label index="tt_content.tx_rgsmoothgallery_option_theme.bar">Bar</label>
 			<label index="tt_content.tx_rgsmoothgallery_option_effect">Effect</label>
 			<label index="tt_content.tx_rgsmoothgallery_option_effect.fold">fold</label>
 			<label index="tt_content.tx_rgsmoothgallery_option_effect.fade">fade</label>

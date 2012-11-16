@@ -25,11 +25,6 @@ class Tx_Rgsmoothgallery_Model_Dto_Configuration {
 	/**
 	 * @var string
 	 */
-	protected $theme = '';
-
-	/**
-	 * @var string
-	 */
 	protected $effect = '';
 
 	/**
