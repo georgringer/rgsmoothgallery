@@ -5,7 +5,7 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 	/**
 	 * @param $content
 	 * @param $conf
-	 * @return string
+	 * @return void
 	 */
 	public function user_renderConfiguration($content, $conf) {
 		$contentElementData = $this->cObj->data;
@@ -19,13 +19,12 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 					$("#rgsmoothgallery-' . $contentElementData['uid'] . '").parent().css("height", "");
 					$("#rgsmoothgallery-' . $contentElementData['uid'] . '").nivoSlider(
 						{
-							' . $this->getRenderedOptions ($contentElementData['tx_rgsmoothgallery_configuration']) . '
+							' . $this->getRenderedOptions($contentElementData['tx_rgsmoothgallery_configuration']) . '
 						}
 					);
 				});
 		</script>';
-
-		return $js;
+		$GLOBALS['TSFE']->additionalFooterData['rgmsoothgallery-' . $contentElementData['uid']] = $js;
 	}
 
 	/**
@@ -36,8 +35,8 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 	 */
 	protected function getRenderedOptions($configuration) {
 		/** @var $renderer Tx_Rgsmoothgallery_Model_Dto_Configuration */
-		$renderer = t3lib_div::makeInstance ('Tx_Rgsmoothgallery_Model_Dto_Configuration', $configuration);
-		return $renderer->render ();
+		$renderer = t3lib_div::makeInstance('Tx_Rgsmoothgallery_Model_Dto_Configuration', $configuration);
+		return $renderer->render();
 	}
 
 }
