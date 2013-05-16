@@ -1,0 +1,2 @@
+	# cat=basic/enable/120; type=boolean; label=LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_be.xml:extmng.showConfigurationFields
+showConfigurationFields = 0
