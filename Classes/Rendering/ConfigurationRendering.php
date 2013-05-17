@@ -27,6 +27,36 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 		$GLOBALS['TSFE']->additionalFooterData['rgmsoothgallery-' . $contentElementData['uid']] = $js;
 	}
 
+	public function user_rememberFile($content, $conf) {
+		$contentElementData = $this->cObj->data;
+
+		$GLOBALS['rgsmoothgallery'][$contentElementData['uid']][] = $this->cObj->data[$this->cObj->currentValKey];
+	}
+
+	public function user_renderThumbs($content, $conf) {
+		$contentElementData = $this->cObj->data;
+		$content = '';
+
+		$images = $GLOBALS['rgsmoothgallery'][$contentElementData['uid']];
+		foreach($images as $image) {
+			$conf = array(
+				'file' => $image,
+				'file.' => array(
+					'maxW' => 40
+				)
+			);
+			$content .= '<li>' . $this->cObj->IMAGE($conf) . '</li>';
+		}
+
+		$content = '<div id="carousel" class="flexslider">
+					<ul class="slides">
+						' . $content . '
+					</ul>
+				</div>';
+
+		return $content;
+	}
+
 	/**
 	 * Get the configuration
 	 *
