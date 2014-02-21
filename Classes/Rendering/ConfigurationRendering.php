@@ -1,6 +1,10 @@
 <?php
 
-class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
+namespace GeorgRinger\Rgsmoothgallery\Rendering;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+class ConfigurationRendering {
 
 	/**
 	 * @param $content
@@ -11,7 +15,7 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 		$contentElementData = $this->cObj->data;
 
 		if ($contentElementData['tx_rgsmoothgallery_rgsg'] === '') {
-			return '';
+			return;
 		}
 
 		$js = '<script type="text/javascript">
@@ -38,7 +42,7 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 		$content = '';
 
 		$images = $GLOBALS['rgsmoothgallery'][$contentElementData['uid']];
-		foreach($images as $image) {
+		foreach ($images as $image) {
 			$conf = array(
 				'file' => $image,
 				'file.' => array(
@@ -64,11 +68,9 @@ class Tx_Rgsmoothgallery_Rendering_ConfigurationRendering {
 	 * @return string
 	 */
 	protected function getRenderedOptions($configuration) {
-		/** @var $renderer Tx_Rgsmoothgallery_Model_Dto_Configuration */
-		$renderer = t3lib_div::makeInstance('Tx_Rgsmoothgallery_Model_Dto_Configuration', $configuration);
+		/** @var $renderer \GeorgRinger\Rgsmoothgallery\Model\Dto\Configuration */
+		$renderer = GeneralUtility::makeInstance('GeorgRinger\\Rgsmoothgallery\\Model\\Dto\\Configuration', $configuration);
 		return $renderer->render();
 	}
 
 }
-
-?>

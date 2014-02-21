@@ -1,4 +1,15 @@
 
+# **********************************************************
+# Configuration for rgsmoothgallery, using nivoslider
+# **********************************************************
+
+page {
+	includeJSFooterlibs.rgsmoothgallery = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/jquery.nivo.slider.js
+	includeCSS.rgsmoothgalleryThemeDefault = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/themes/{$rgsmoothgallery.theme}/{$rgsmoothgallery.theme}.css
+	includeCSS.rgsmoothgallery = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/nivo-slider.css
+}
+
+
 includeLibs.rgsmoothgallery = typo3conf/ext/rgsmoothgallery/Classes/Rendering/ConfigurationRendering.php
 
 tt_content.image.20 {
@@ -21,7 +32,7 @@ tt_content.image.20 {
 	imageStdWrap.stdWrap.append = USER
 	imageStdWrap.stdWrap.append {
 		stdWrap.if.isTrue.field = tx_rgsmoothgallery_rgsg
-		userFunc = Tx_Rgsmoothgallery_Rendering_ConfigurationRendering->user_renderConfiguration
+		userFunc = GeorgRinger\Rgsmoothgallery\Rendering\ConfigurationRendering->user_renderConfiguration
 	}
 
 	# Override the title field and use the caption

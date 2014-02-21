@@ -1,4 +1,6 @@
 <?php
+namespace GeorgRinger\Rgsmoothgallery\Hooks;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2012 Georg Ringer <typo3@ringerge.org>
@@ -16,18 +18,19 @@
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Hook into tceforms
+ * Hook into FormEngine
  */
-class Tx_Rgsmoothgallery_Hooks_Tceforms {
+class FormEngine {
 
 	/**
-	 * @param $table
-	 * @param $field
-	 * @param $row
-	 * @param $altName
-	 * @param $palette
+	 * @param string $table Table name
+	 * @param string $field Field name
+	 * @param array $row current record
+	 * @param string $altName
+	 * @param string $palette
 	 * @param $extra
 	 * @param $pal
 	 * @param $parentObject
@@ -36,12 +39,12 @@ class Tx_Rgsmoothgallery_Hooks_Tceforms {
 		if ($table == 'tt_content') {
 			$rawConfiguration = $row['tx_rgsmoothgallery_configuration'];
 			if (!empty($rawConfiguration)) {
-				$decoded = json_decode ($rawConfiguration);
+				$decoded = json_decode($rawConfiguration);
 				if (!empty($decoded)) {
-					$values = get_object_vars ($decoded);
-					if (is_array ($values)) {
+					$values = get_object_vars($decoded);
+					if (is_array($values)) {
 						foreach ($values as $key => $value) {
-							if (t3lib_div::isFirstPartOfStr ($key, 'tx_rgsmoothgallery_option')) {
+							if (GeneralUtility::isFirstPartOfStr($key, 'tx_rgsmoothgallery_option')) {
 								$row[$key] = $value;
 							}
 						}
@@ -60,13 +63,11 @@ class Tx_Rgsmoothgallery_Hooks_Tceforms {
 	 * @param $parentObject
 	 */
 	public function getSingleField_postProcess($table, $field, $row, &$out, $PA, $parentObject) {
-		if ($table == 'tt_content' && $row['tx_rgsmoothgallery_rgsg'] != 1) {
-			if (t3lib_div::isFirstPartOfStr ($field, 'tx_rgsmoothgallery_option')) {
+		if ($table === 'tt_content' && $row['tx_rgsmoothgallery_rgsg'] != 1) {
+			if (GeneralUtility::isFirstPartOfStr($field, 'tx_rgsmoothgallery_option')) {
 				$out = '';
 			}
 		}
 	}
 
 }
-
-?>

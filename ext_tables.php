@@ -6,14 +6,13 @@ if (!defined('TYPO3_MODE')) {
 /***************
  * Default TypoScript
  */
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Rendering', 'rgsmoothgallery Rendering');
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Inclusion', 'rgsmoothgallery Inclusion');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Rendering/Nivo', 'rgsmoothgallery Rendering Nivo');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Rendering/Flexslider', 'rgsmoothgallery Rendering Flexslider');
 
 
 /***************
  * Add fields to TCA
  */
-t3lib_div::loadTCA('tt_content');
 $tempColumns = Array(
 	'tx_rgsmoothgallery_rgsg' => array(
 		'exclude' => 1,
@@ -75,8 +74,10 @@ $tempColumns = Array(
 	),
 );
 
-t3lib_div::loadTCA('tt_content');
-t3lib_extMgm::addTCAcolumns('tt_content', $tempColumns, 1);
+$GLOBALS['TCA']['tt_content']['palettes']['rgsg'] = array(
+	'showitem' => $fields,
+	'canNotCollapse' => FALSE
+);
 
 $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]);
 $fields = 'tx_rgsmoothgallery_rgsg,tx_rgsmoothgallery_configuration,';
@@ -85,17 +86,5 @@ if (is_array($settings) && $settings['showConfigurationFields'] == 1) {
 		'--linebreak--,tx_rgsmoothgallery_option_directionNav,tx_rgsmoothgallery_option_controlNav';
 }
 
-$GLOBALS['TCA']['tt_content']['palettes']['rgsg'] = array(
-	'showitem' => $fields,
-	'canNotCollapse' => FALSE
-);
-
-
-$GLOBALS['TCA']['tt_content']['palettes']['5']['showitem'] .= ',tx_rgsmoothgallery_rgsg';
-$search = '--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.imageblock;imageblock,';
-$replace = $search . ',--palette--;LLL:EXT:rgsmoothgallery/Resources/Private/Language/locallang_db.xml:tt_content.tx_rgsmoothgallery;rgsg,';
-
-$GLOBALS['TCA']['tt_content']['types']['textpic']['showitem'] = str_replace($search, $replace, $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem']);
-$GLOBALS['TCA']['tt_content']['types']['image']['showitem'] = str_replace($search, $replace, $GLOBALS['TCA']['tt_content']['types']['textpic']['showitem']);
-
-?>
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns, 1);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', $fields, 'textpic,image', 'after:image_zoom');

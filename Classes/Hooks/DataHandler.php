@@ -1,4 +1,6 @@
 <?php
+namespace GeorgRinger\Rgsmoothgallery\Hooks;
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2012 Georg Ringer <typo3@ringerge.org>
@@ -16,38 +18,33 @@
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 
 /**
- * Hook into tcemain
+ * Hook into the DataHandler
  */
-class Tx_Rgsmoothgallery_Hooks_Tcemain {
+class DataHandler {
 
 	/**
-	 * Generate a different preview link
-	 *
-	 * @param string $status status
+	 * @param array $incomingFieldArray incoming saved data
 	 * @param string $table table name
-	 * @param integer $recordUid id of the record
-	 * @param array $fields fieldArray
-	 * @param t3lib_TCEmain $parentObject parent Object
-	 * @return void
+	 * @param int $id uid of the record
+	 * @param $parentObject
 	 */
 	public function processDatamap_preProcessFieldArray(&$incomingFieldArray, $table, $id, $parentObject) {
 
 		if ($table === 'tt_content') {
-
 			$result = array();
 
 			foreach ($incomingFieldArray as $key => $value) {
-				if (t3lib_div::isFirstPartOfStr ($key, 'tx_rgsmoothgallery_option')) {
+				if (GeneralUtility::isFirstPartOfStr($key, 'tx_rgsmoothgallery_option')) {
 					$result[$key] = $value;
 					unset($incomingFieldArray[$key]);
 				}
 			}
-			$incomingFieldArray['tx_rgsmoothgallery_configuration'] = json_encode ($result);
+			$incomingFieldArray['tx_rgsmoothgallery_configuration'] = json_encode($result);
 		}
 	}
 
 }
-
-?>

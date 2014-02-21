@@ -1,7 +1,0 @@
-
-page {
-	includeJSFooterlibs.rgsmoothgallery = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/jquery.nivo.slider.js
-	includeCSS.rgsmoothgalleryThemeDefault = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/themes/{$rgsmoothgallery.theme}/{$rgsmoothgallery.theme}.css
-	includeCSS.rgsmoothgallery = typo3conf/ext/rgsmoothgallery/Resources/Public/nivo/nivo-slider.css
-}
-

@@ -1,4 +1,7 @@
 <?php
+namespace GeorgRinger\Rgsmoothgallery\Model\Dto;
+
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2012 Georg Ringer <typo3@ringerge.org>
@@ -16,11 +19,13 @@
  *  GNU General Public License for more details.
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 
 /**
  * Model for configuration
  */
-class Tx_Rgsmoothgallery_Model_Dto_Configuration {
+class Configuration {
 
 	/**
 	 * @var string
@@ -45,19 +50,19 @@ class Tx_Rgsmoothgallery_Model_Dto_Configuration {
 	protected $configuration = array();
 
 	/**
-	 * @param string $configuration
+	 * @param string $configurationAsJson
 	 */
 	public function __construct($configurationAsJson) {
 		$this->configuration = array();
-		$configuration = json_decode ($configurationAsJson);
+		$configuration = json_decode($configurationAsJson);
 		if ($configuration) {
-			$configuration = get_object_vars ($configuration);
+			$configuration = get_object_vars($configuration);
 		}
-		if (is_array ($configuration)) {
-			$availableProperties = get_class_vars (__CLASS__);
+		if (is_array($configuration)) {
+			$availableProperties = get_class_vars(__CLASS__);
 
 			foreach ($configuration as $singleConfiguration => $value) {
-				$shortKey = str_replace ('tx_rgsmoothgallery_option_', '', $singleConfiguration);
+				$shortKey = str_replace('tx_rgsmoothgallery_option_', '', $singleConfiguration);
 				if (isset($availableProperties[$shortKey])) {
 					$this->configuration[$shortKey] = $value;
 				}
@@ -73,10 +78,10 @@ class Tx_Rgsmoothgallery_Model_Dto_Configuration {
 	public function render() {
 		$out = array();
 		foreach ($this->configuration as $key => $value) {
-			$out[] = t3lib_div::quoteJSvalue ($key) . ':' . $this->quote ($value);
+			$out[] = GeneralUtility::quoteJSvalue($key) . ':' . $this->quote($value);
 		}
 
-		return implode (',' . LF, $out);
+		return implode(',' . LF, $out);
 	}
 
 	/**
@@ -96,15 +101,13 @@ class Tx_Rgsmoothgallery_Model_Dto_Configuration {
 			case 'FALSE':
 				$out = 'false';
 				break;
-			case (ctype_digit ($value)):
+			case (ctype_digit($value)):
 				$out = (int)$value;
 				break;
 			default:
-				$out = t3lib_div::quoteJSvalue ($value);
+				$out = GeneralUtility::quoteJSvalue($value);
 		}
 
 		return $out;
 	}
 }
-
-?>
