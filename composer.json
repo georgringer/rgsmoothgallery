@@ -1,0 +1,9 @@
+{
+	"name": "georgringer/rgsmoothgallery",
+	"version": "3.0.0",
+	"description": "rgsmoothgallery based on jQuery",
+	"type": "typo3-cms-extension",
+	"replace": {
+		"rgsmoothgallery": "*"
+	}
+}
